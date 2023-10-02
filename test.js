@@ -13,7 +13,7 @@ function initializeAssistant() {
         },
       },
       {
-        element: "#button1",
+        element: "#button11",
         info: {
           title: "Some title here",
           description: "some description",
