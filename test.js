@@ -1,9 +1,9 @@
 import PageAssistant from "./lib/assistant";
 
-const assist = new PageAssistant();
-
-function initializeAssistant() {
-  assist.loadAssets("./lib/assets/assistant.gif").highlight({
+new PageAssistant()
+  .loadAssets("./lib/assets/assistant.gif")
+  .inject()
+  .highlight({
     steps: [
       {
         element: "#button12",
@@ -13,7 +13,7 @@ function initializeAssistant() {
         },
       },
       {
-        element: "#button11",
+        element: "#button1",
         info: {
           title: "Some title here",
           description: "some description",
@@ -21,6 +21,3 @@ function initializeAssistant() {
       },
     ],
   });
-}
-
-initializeAssistant();
