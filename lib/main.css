@@ -1,15 +1,16 @@
 .pa-assist-container {
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
   position: fixed;
-  right: 2em;
+  right: -1em;
   bottom: 1em;
+  transition: all 0.2s ease-in-out;
 }
 
 .pa-assist-container img {
   width: 150px;
   transform: scalex(-1);
   user-select: none;
+  z-index: -1;
 }
 
 .pa-assist-container .pa-assist-content {
@@ -21,4 +22,54 @@
   border: 1px solid #d9d9d9;
   padding: 10px;
   border-radius: 5px;
+  background: #fff;
+}
+
+.pa-assist-container .pa-assist-content.right {
+  right: -10em;
+}
+
+.pa-assist-container .pa-assist-content.hide {
+  display: none;
+}
+
+.pa-assist-container .pa-assist-content.show {
+  display: block;
+}
+
+.pa-assist-container .pa-assist-content.right::after {
+  content: "";
+  position: absolute;
+  left: -0.8em;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 12px solid #ccc;
+}
+
+.pa-assist-container .pa-assist-content.left::before {
+  content: "";
+  position: absolute;
+  right: -0.8em;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid #ccc;
+}
+
+.pa-assist-container .pa-assist-content p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin: 1px;
+}
+
+.pa-assist-container .pa-assist-content span {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  color: #777;
+  font-size: 12px;
 }
